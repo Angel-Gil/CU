@@ -7,25 +7,26 @@ function tryOpenApp() {
     if (code && code !== 'p' && code !== '') {
         // Redirigir al esquema de la app
         // Formato: calendario://p/CODIGO
-        const deepLink = `calendario://p/${code}`;
+        // Formato: calendario://p/CODIGO?query=pix
+        const deepLink = `calendario://p/${code}${window.location.search}`;
         console.log("Intentando abrir:", deepLink);
-        
+
         // Intentar abrir la app
         window.location.href = deepLink;
 
         // Si después de 2 segundos seguimos aquí, mostrar mensaje
         setTimeout(() => {
-            document.getElementById('message').innerText = 
+            document.getElementById('message').innerText =
                 "Si la app no se abre, asegúrate de tenerla instalada.";
         }, 2000);
     } else {
-        document.getElementById('message').innerText = 
+        document.getElementById('message').innerText =
             "Enlace inválido o incompleto.";
         document.getElementById('open-app-btn').style.display = 'none';
     }
 }
 
 // Intentar abrir automáticamente al cargar
-window.onload = function() {
+window.onload = function () {
     tryOpenApp();
 };
