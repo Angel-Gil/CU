@@ -7,8 +7,8 @@ function tryOpenApp() {
     if (code && code !== 'p' && code !== '') {
         // Redirigir al esquema de la app
         // Formato: calendario://p/CODIGO
-        // Formato: calendario://p/CODIGO?query=pix
-        const deepLink = `calendario://p/${code}${window.location.search}`;
+        // Formato: calendario://app/p/CODIGO?query=pix
+        const deepLink = `calendario://app/p/${code}${window.location.search}`;
         console.log("Intentando abrir:", deepLink);
 
         // Intentar abrir la app
