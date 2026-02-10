@@ -29,9 +29,12 @@ body {
     text-align: center;
 }
 
-.logo {
-    font-size: 64px;
+.logo-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
     margin-bottom: 20px;
+    object-fit: contain;
 }
 
 h1 {
